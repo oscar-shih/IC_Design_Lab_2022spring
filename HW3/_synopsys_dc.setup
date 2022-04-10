@@ -1,0 +1,32 @@
+#
+# 1. Modify this file to fit your own environment.
+# 2. Copy this file synopsys_dc.setup to .synopsys_dc.setup
+#    and put this file in tool's invoking directory or your home directory.
+#	
+
+
+set company {NTUGIEE}
+set designer {Student}
+
+set search_path [concat  [list . Your SynopsysDC path .] $search_path]
+set link_library [list "dw_foundation.sldb" "fsa0m_a_generic_core_tt1p8v25c.db" "fsa0m_a_generic_core_ss1p62v125c.db" "fsa0m_a_generic_core_ff1p98vm40c.db" "fsa0m_a_t33_generic_io_tt1p8v25c.db" "fsa0m_a_t33_generic_io_ss1p62v125c.db" "fsa0m_a_t33_generic_io_ff1p98vm40c.db" ]
+set target_library [list "fsa0m_a_generic_core_tt1p8v25c.db" "fsa0m_a_generic_core_ss1p62v125c.db" "fsa0m_a_generic_core_ff1p98vm40c.db" "fsa0m_a_t33_generic_io_tt1p8v25c.db" "fsa0m_a_t33_generic_io_ss1p62v125c.db" "fsa0m_a_t33_generic_io_ff1p98vm40c.db" ]
+set symbol_library [list "generic.sdb"]
+set synthetic_library [list "dw_foundation.sldb"]
+set default_schematic_options {-size infinite}
+
+set hdlin_translate_off_skip_text "TRUE"
+set edifout_netlist_only "TRUE"
+set verilogout_no_tri true	
+set plot_command {lpr -Plw}
+set hdlin_auto_save_templates "TRUE"
+set compile_fix_multiple_port_nets "TRUE"
+
+
+set bus_inference_style {%s[%d]}
+set bus_naming_style {%s[%d]}
+set hdlout_internal_busses true
+define_name_rules name_rule -allowed {a-z A-Z 0-9 _} -max_length 255 -type cell
+define_name_rules name_rule -allowed {a-z A-Z 0-9 _[]} -max_length 255 -type net
+define_name_rules name_rule -map {{"\\*cell\\*" "cell"}}
+define_name_rules name_rule -case_insensitive
