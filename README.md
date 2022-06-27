@@ -17,3 +17,6 @@
 ## HW5
 * Postlayout 
 * DRC & LVS
+## Final Project -- Hash160 IC Design
+* https://github.com/oscar-shih/ICDLAB-final_project-Hash160
+* Go through all IC Design flow and send it to TSRI to make real chips
